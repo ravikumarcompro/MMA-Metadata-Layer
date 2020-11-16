@@ -1,5 +1,5 @@
 {
-  "name": "external-metadata-interface-builder",
+  "name": "mma-metadata-layer",
   "version": "1.0.1",
   "description": "This Interface connects builder with external metadata of different organizations and transform that data in builder format for the ease of use.",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ravikumarcompro/External-Metadata-Interface-Builder.git"
+    "url": "git+https://github.com/ravikumarcompro/MMA-Metadata-Layer.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ravikumarcompro/External-Metadata-Interface-Builder/issues"
+    "url": "https://github.com/ravikumarcompro/MMA-Metadata-Layer/issues"
   },
-  "homepage": "https://github.com/ravikumarcompro/External-Metadata-Interface-Builder#readme",
+  "homepage": "https://github.com/ravikumarcompro/MMA-Metadata-Layer#readme",
   "dependencies": {
     "cloudant": "^1.10.0-NOTICE",
     "request": "^2.88.2"
