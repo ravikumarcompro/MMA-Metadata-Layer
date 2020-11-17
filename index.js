@@ -11,10 +11,10 @@ async function getMetadata(inputs){
           return Promise.reject({ success: false , err: new Error("Library is not initialized ")})
         }
         //Check if taxonomy list is empty
-        if(!input.taxonomies || inputs.taxonomies.length == 0 ){
-            return Promise.reject({ success:false , err: "Taxonomy List is Empty" })
+        if(!inputs.category || !inputs.category.taxonomy || inputs.category.taxonomy.length == 0 ){
+            return Promise.reject({ success:false , err: "Taxonomy List is Empty or Not Present" })
         }
-        let categoryMap = await mma.getCategoryMap(inputs.taxonomies, externalMetadataConfig);
+        let categoryMap = await mma.getCategoryMap(inputs.category.taxonomy, externalMetadataConfig);
         return Promise.resolve({ success:true, data:categoryMap });
     } catch(err){
         console.log(err);
