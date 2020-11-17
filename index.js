@@ -1,6 +1,7 @@
 const cloudantOrgConfig = require('./lib/orgConfig');
 const moduleSelection = require('./organization/moduleSelection');
 const util = require('util');
+const cup = require('./organization/cup');
 let baseConfig = null;
 
 async function getMetadata(orgId){
@@ -11,7 +12,7 @@ async function getMetadata(orgId){
         let metaDb = cloudantInstance.db.use('organizations');
         let getConfigMethod = util.promisify(metaDb.get);
         let organizationConfig = await getConfigMethod(orgId);
-        let categoryMap = await moduleSelection.getCategoryMap(orgId, organizationConfig, baseConfig);
+        let categoryMap = await cup.getCategoryMap(orgId, organizationConfig, baseConfig);
         return Promise.resolve({ success:true, data:categoryMap });
     } catch(err){
         console.log(err);

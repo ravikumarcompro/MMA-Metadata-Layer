@@ -1,7 +1,4 @@
 const request = require('request');
-
-
-
 async function getCategoryMap(orgId, cloudantConfig, baseConfig){
     try {
         let organizationMetadataConfig = baseConfig.organizations[orgId].metadata;
