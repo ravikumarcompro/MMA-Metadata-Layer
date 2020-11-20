@@ -13,12 +13,12 @@ const organizationMap = {
  * @param {String} orgId Organization unique Id.
  * @returns {Object} Organization Instance
  */
-function getOrganizationInstance(orgId){
+async function getOrganizationInstance(orgId){
     if(organizationMap[orgId]){
-        return organizationMap[orgId];
+        return Promise.resolve(organizationMap[orgId]);
     } 
     else {
-        return new Error("Organization External Metadata Module not found with id " + orgId); 
+        return Promise.reject("Organization External Metadata Module not found with id " + orgId); 
     }  
 }
 
