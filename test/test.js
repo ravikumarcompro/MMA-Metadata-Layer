@@ -14,14 +14,16 @@ let options = {
     docs:true
 }
 
-let organizationModule = unitTest.getOrganizationInstance(config.id);
-
-organizationModule.configure(config).then(()=>{
-    organizationModule.getMetadata(options).then((res)=>{
-        console.log(JSON.stringify(res));
-    }).catch(err=>{
+unitTest.getOrganizationInstance(config.id).then(organizationModule=>{
+    organizationModule.configure(config).then(()=>{
+        organizationModule.getMetadata(options).then((res)=>{
+            console.log(JSON.stringify(res));
+        }).catch(err=>{
+            console.log(err);
+        })
+    }).catch((err)=>{
         console.log(err);
     })
-}).catch((err)=>{
+}).catch(err=>{
     console.log(err);
 })

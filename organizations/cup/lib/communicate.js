@@ -33,7 +33,7 @@ function getLatestTaxonomyById(config, id){
  */
 function getProxyById(config, id){
     // generate url from base url for proxy
-    let proxyUrl = cofig.url + '/proxies/' + id;
+    let proxyUrl = config.url + '/proxies/' + id;
     return get( proxyUrl, config.apiKey);
 }
 
