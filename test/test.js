@@ -1,5 +1,6 @@
 const unitTest = require('./../index');
 
+// Below config and options are specific to CUP.
 let config = {
     apiKey:"",
     url: "",
@@ -8,12 +9,15 @@ let config = {
 
 let options = {
     taxonomy:{
+      
     },
     docs:true
 }
 
-unitTest.configure(config).then(()=>{
-    unitTest.getMetadata(options).then((res)=>{
+let organizationModule = unitTest.getOrganizationInstance(config.id);
+
+organizationModule.configure(config).then(()=>{
+    organizationModule.getMetadata(options).then((res)=>{
         console.log(JSON.stringify(res));
     }).catch(err=>{
         console.log(err);
