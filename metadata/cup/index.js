@@ -38,7 +38,6 @@ async function getMetadata(options){
         }
         return Promise.resolve({ success:true, data:response });
     } catch(err){
-        console.log(err);
         return Promise.reject({ success:false, err : err });
     }
 }
@@ -67,7 +66,7 @@ async function configure(config){
  * @param {String} id - Proxy Id of a term.
  * @returns {Promise} Promise which gets resolved with term's proxy data.
  */
-async function getProxyById(id){
+async function getTagDetails(id){
     try {
         //if config is empty reject with Library not Initialized Error
         if(!externalMetadataConfig){
@@ -89,4 +88,4 @@ async function getProxyById(id){
 
 
 
-module.exports = { getMetadata, configure, getProxyById }
+module.exports = { getMetadata, configure, getTagDetails }

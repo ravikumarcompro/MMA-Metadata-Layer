@@ -24,7 +24,6 @@ async function getAllDocs(options, config){
         let response = transform(docs.data, docs.colorMap);
         return Promise.resolve(response);
     } catch (err) {
-        console.log(err);
         return Promise.reject(err);
     }
 }
@@ -63,7 +62,6 @@ async function fetchAllDocs(options, config){
         }
         return Promise.resolve({data:response, colorMap:colorMap});
     }catch(err){
-        console.log(err);
         return Promise.reject(err);
     }
 }

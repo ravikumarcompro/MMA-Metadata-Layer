@@ -24,7 +24,7 @@ async function getCategoryMap(options, config){
         let response = createMapFromFlattened(flattenedMap);
         return Promise.resolve(response);
     } catch (err) {
-        console.log(err);
+  
         return Promise.log(err);
     }
 }
@@ -64,7 +64,7 @@ async function getFlattenedMap(taxonomies, config){
         return Promise.resolve({ taxonomies:response, colorMap:colorMap });
     }
     catch(err){
-        console.log(err);
+
         return Promise.reject(err);
     }
 }

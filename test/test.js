@@ -2,28 +2,27 @@ const unitTest = require('./../index');
 
 // Below config and options are specific to CUP.
 let config = {
-    apiKey:"",
-    url: "",
-    id:""
-}
-
-let options = {
-    taxonomy:{
-      
+    "id": "",
+    "syncTime": ,
+    "source": {
+      "type": "",
+      "url": "",
+      "apiKey": ""
     },
-    docs:true
+    "builder-mapping": {
+      "category": {
+        "id": "",
+        "taxonomy": {
+          "replace_with_taxonomy_id": {
+                "theme": "metadata-theme-lemon"
+            }
+        }
+    }
+    }
 }
 
-unitTest.getOrganizationInstance(config.id).then(organizationModule=>{
-    organizationModule.configure(config).then(()=>{
-        organizationModule.getMetadata(options).then((res)=>{
-            console.log(JSON.stringify(res));
-        }).catch(err=>{
-            console.log(err);
-        })
-    }).catch((err)=>{
-        console.log(err);
-    })
+unitTest.getExternalMetadata(config).then(res=>{
+   console.log(res);
 }).catch(err=>{
     console.log(err);
 })
